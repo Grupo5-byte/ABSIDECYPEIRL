@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nombre de la Empresa - Arquitectura</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        header, footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 1em 0;
+        }
+        nav a {
+            color: #fff;
+            margin: 0 15px;
+            text-decoration: none;
+        }
+        section {
+            padding: 20px;
+        }
+        h1, h2 {
+            color: #333;
+        }
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #007BFF;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .button:hover {
+            background-color: #0056b3;
+        }
+        .projects, .services {
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .project, .service {
+            flex: 1;
+            margin: 10px;
+            padding: 10px;
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        footer {
+            margin-top: 20px;
+        }
+        form input, form textarea {
+            display: block;
+            width: 100%;
+            margin-bottom: 10px;
+            padding: 10px;
+        }
+        form button {
+            padding: 10px 15px;
+            background-color: #007BFF;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <h1>Nombre de la Empresa - Arquitectura</h1>
+        <nav>
+            <a href="#inicio">Inicio</a>
+            <a href="#servicios">Servicios</a>
+            <a href="#proyectos">Proyectos</a>
+            <a href="#nosotros">Nosotros</a>
+            <a href="#contacto">Contacto</a>
+        </nav>
+    </header>
+
+    <!-- Home Section -->
+    <section id="inicio">
+        <h2>Bienvenido a Nombre de la Empresa</h2>
+        <p>Somos una empresa de arquitectura dedicada a crear espacios innovadores y sostenibles. Con más de X años de experiencia, ofrecemos soluciones personalizadas que transforman las ideas en realidad.</p>
+        <a href="#nosotros" class="button">Conoce más sobre nosotros</a>
+    </section>
+
+    <!-- Services Section -->
+    <section id="servicios">
+        <h2>Nuestros Servicios</h2>
+        <div class="services">
+            <div class="service">
+                <h3>Diseño arquitectónico</h3>
+                <p>Trabajamos contigo desde la planificación inicial hasta los planos detallados para crear espacios únicos y funcionales.</p>
+            </div>
+            <div class="service">
+                <h3>Rehabilitación y remodelación</h3>
+                <p>Transformamos edificaciones antiguas en espacios modernos y eficientes.</p>
+            </div>
+            <div class="service">
+                <h3>Supervisión de obra</h3>
+                <p>Gestionamos y coordinamos todos los aspectos del proyecto para asegurar plazos y presupuestos.</p>
+            </div>
+            <div class="service">
+                <h3>Consultoría técnica</h3>
+                <p>Te asesoramos en normativas, permisos y estudios técnicos para tu proyecto.</p>
+            </div>
+        </div>
+        <a href="#servicios" class="button">Descubre nuestros servicios completos</a>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="proyectos">
+        <h2>Nuestros Proyectos Destacados</h2>
+        <div class="projects">
+            <div class="project">
+                <h3>Residencia Greenhouse</h3>
+                <p>Diseño de vivienda sostenible en la ciudad.</p>
+            </div>
+            <div class="project">
+                <h3>Centro Corporativo Delta</h3>
+                <p>Edificio comercial de última tecnología.</p>
+            </div>
+            <div class="project">
+                <h3>Rehabilitación Casa Patrimonial</h3>
+                <p>Restauración y modernización de un edificio histórico.</p>
+            </div>
+        </div>
+        <a href="#proyectos" class="button">Ver todos los proyectos</a>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="nosotros">
+        <h2>¿Quiénes Somos?</h2>
+        <p>En Nombre de la Empresa, combinamos pasión por la arquitectura con un enfoque técnico y artístico. Nuestro equipo está compuesto por arquitectos, diseñadores y técnicos que trabajan juntos para hacer realidad tu visión.</p>
+        <h3>Misión</h3>
+        <p>Crear espacios que mejoren la vida de las personas y respeten el medio ambiente.</p>
+        <h3>Visión</h3>
+        <p>Ser líderes en arquitectura sostenible y diseño innovador.</p>
+        <a href="#nosotros" class="button">Conoce más sobre nuestro equipo</a>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contacto">
+        <h2>Contacto</h2>
+        <p>Estamos aquí para ayudarte. Si tienes alguna pregunta o deseas comenzar a planificar tu próximo proyecto, contáctanos.</p>
+        <p><strong>Dirección:</strong> Calle X, Edificio Y, Ciudad</p>
+        <p><strong>Teléfono:</strong> +123 456 789</p>
+        <p><strong>Correo electrónico:</strong> info@nombredelaempresa.com</p>
+        
+        <form>
+            <input type="text" name="nombre" placeholder="Nombre" required>
+            <input type="email" name="email" placeholder="Correo electrónico" required>
+            <textarea name="mensaje" placeholder="Mensaje" rows="5" required></textarea>
+            <button type="submit">Enviar</button>
+        </form>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2024 Nombre de la Empresa - Todos los derechos reservados</p>
+    </footer>
+
+</body>
+</html>
