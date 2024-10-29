@@ -16,12 +16,12 @@
         }
 
         body {
-            background-color: #f4f4f4;
-            color: #333;
+            background-color: #efefef;
+            color: #245551;
         }
 
         header, footer, .head {
-            background-color: #333;
+            background-color: #245551;
             color: white;
             text-align: center;
             padding: 1em;
@@ -38,10 +38,18 @@
         section {
             padding: 40px;
             text-align: center;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+        }
+
+        section.visible {
+            opacity: 1;
+            transform: translateY(0);
         }
 
         h1, h2 {
-            color: #333;
+            color: #ffffff;
         }
 
         .button, .btn {
@@ -51,6 +59,7 @@
             color: white;
             text-decoration: none;
             border-radius: 5px;
+            transition: background-color 0.3s ease;
         }
 
         .button:hover, .btn:hover {
@@ -73,6 +82,12 @@
             border-radius: 10px;
             text-align: center;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .service:hover, .project:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
         }
 
         .service h3, .project h3 {
@@ -88,7 +103,7 @@
         /* Estilos para chatbot */
         .chatbot {
             position: fixed;
-            bottom: 20px;
+            bottom: -320px;
             right: 20px;
             width: 300px;
             max-width: 90%;
@@ -96,7 +111,11 @@
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
             background-color: #fff;
             overflow: hidden;
-            display: none; /* Escondido por defecto */
+            transition: bottom 0.5s ease;
+        }
+
+        .chatbot.active {
+            bottom: 20px;
         }
 
         .chatbot-header {
@@ -142,7 +161,7 @@
 
     <!-- Encabezado -->
     <header>
-        <h1>Nombre de la Empresa - Arquitectura</h1>
+        <h1>Abside - Arquitectura</h1>
         <nav>
             <a href="#inicio">Inicio</a>
             <a href="#servicios">Servicios</a>
@@ -154,8 +173,8 @@
 
     <!-- Sección Inicio -->
     <section id="inicio">
-        <h2>Bienvenido a Nombre de la Empresa</h2>
-        <p>Somos una empresa de arquitectura dedicada a crear espacios innovadores y sostenibles. Con más de X años de experiencia, ofrecemos soluciones personalizadas que transforman las ideas en realidad.</p>
+        <h2>Bienvenido a Abside consultoria y proyectos EIRL</h2>
+        <p>Somos una empresa de arquitectura dedicada a crear espacios innovadores y sostenibles. Con más de 15 años de experiencia, ofrecemos soluciones personalizadas que transforman las ideas en realidad.</p>
         <a href="#nosotros" class="button">Conoce más sobre nosotros</a>
     </section>
 
@@ -166,21 +185,20 @@
             <div class="service">
                 <i class="fas fa-drafting-compass"></i>
                 <h3>Diseño arquitectónico</h3>
-                <p>Trabajamos contigo desde la planificación inicial hasta los planos detallados para crear espacios únicos y funcionales.</p>
+                <p>Trabajamos contigo para crear espacios únicos y funcionales.</p>
             </div>
             <div class="service">
                 <i class="fas fa-hard-hat"></i>
                 <h3>Rehabilitación y remodelación</h3>
-                <p>Transformamos edificaciones antiguas en espacios modernos y eficientes.</p>
+                <p>Transformamos edificaciones en espacios modernos y eficientes.</p>
             </div>
             <div class="service">
                 <i class="fas fa-project-diagram"></i>
                 <h3>Supervisión de obra</h3>
-                <p>Gestionamos y coordinamos todos los aspectos del proyecto para asegurar plazos y presupuestos.</p>
+                <p>Gestionamos y coordinamos el proyecto para asegurar plazos y presupuestos.</p>
             </div>
         </div>
     </section>
-
     <!-- Sección Proyectos -->
     <section id="proyectos">
         <h2>Nuestros Proyectos Destacados</h2>
@@ -210,7 +228,7 @@
         <p><strong>Teléfono:</strong> +123 456 789</p>
         <p><strong>Correo electrónico:</strong> info@nombredelaempresa.com</p>
     </section>
-
+    
     <!-- Chatbot -->
     <div class="chatbot" id="chatbot">
         <div class="chatbot-header">Chat con Nombre de la Empresa</div>
@@ -227,7 +245,7 @@
     <script>
         function toggleChatbot() {
             const chatbot = document.getElementById('chatbot');
-            chatbot.style.display = chatbot.style.display === 'none' ? 'block' : 'none';
+            chatbot.classList.toggle('active');
         }
 
         function sendMessage() {
@@ -246,6 +264,15 @@
                 chatMessages.scrollTop = chatMessages.scrollHeight;
             }
         }
+
+        window.addEventListener('scroll', function() {
+            document.querySelectorAll('section').forEach(section => {
+                const rect = section.getBoundingClientRect();
+                if (rect.top <= window.innerHeight - 100) {
+                    section.classList.add('visible');
+                }
+            });
+        });
     </script>
 
     <!-- Footer -->
